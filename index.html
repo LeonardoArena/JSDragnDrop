@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<!--
+	IMPORTANT THINGS OF THE ITEMS TABLE:
+
+		- The table is referenced by the ID attribute to walk it and read the items order
+
+		- An item-class row is defined with the value "itemsClass" of it's class attribute, and the item-class name is the innerText of row's firstElementChild
+
+		- "lotBox" class row is for the "unsorted" or "unclassified" items
+
+		- An item row is defined with the value "item" of it's class attribute, and identified with it's ID (ID is just for identification and has no use in the JS functions)
+
+		- Intuitively, "draggable" and "dropBox" classes are used to specify JavaScript what can be dragged and where can it be dropped; when something is dropped, it's added as HTML element "afterend" to the "dropBox"
+
+		- The handle for grabbing an item is an item-row's child element defined with the value "dragHandle" of it's class attribute
+			NOTE: using the table row as "dragHandle" doesn't work because it covers the whole row and blocks, for example, select text content of a cell
+
+-->
+<head>
+	
+	<link rel="icon" href="data:,">
+	<script src="js/ui_js.js"></script>
+	<link rel="stylesheet" href="css/ui.css">
+
+</head>
+
+<body>
+	<table id="mainTable"><tbody>
+		<tr class="tableHeaders">
+			<th>Id</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>More description</th>
+			<th>Details</th>
+			<th>Something else</th>
+		</tr>
+		<tr class="itemsClass dropBox">
+			<td colspan="6">Vehicles</td>
+		</tr>
+		<tr class="itemsClass dropBox">
+			<td colspan="6">Animals</td>
+		</tr>
+		<tr class="itemsClass dropBox">
+			<td colspan="6">Other stuff, but in order</td>
+		</tr>
+		<tr class="itemsClass lotBox dropBox">
+			<td colspan="6">X Items</td>
+		</tr>
+		<tr class="item draggable" id="item_1">
+			<td class="dragHandle" draggable="true" ondragstart="drag(event)">item_1</td>
+			<td>Car</td>
+			<td>Citroën</td>
+			<td>DS19</td>
+			<td>Brown</td>
+			<td>1971</td>
+		</tr>
+		<tr class="item draggable" id="item_2">
+			<td class="dragHandle" draggable="true" ondragstart="drag(event)">item_2</td>
+			<td>Hoverboard</td>
+			<td>Hover</td>
+			<td>Board</td>
+			<td>Pink</td>
+			<td>2015</td>
+		</tr>
+		<tr class="item draggable" id="item_3">
+			<td class="dragHandle" draggable="true" ondragstart="drag(event)">item_3</td>
+			<td>Cow</td>
+			<td>Margarita</td>
+			<td>White</td>
+			<td>Black dots</td>
+			<td>Moo</td>
+		</tr>
+		<tr class="item draggable" id="item_4">
+			<td class="dragHandle" draggable="true" ondragstart="drag(event)">item_4</td>
+			<td>Cookie</td>
+			<td>Chips</td>
+			<td>Double</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="item draggable" id="item_5">
+			<td class="dragHandle" draggable="true" ondragstart="drag(event)">item_5</td>
+			<td>Dog</td>
+			<td>Short legs</td>
+			<td>Long ears</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="item draggable" id="item_6">
+			<td class="dragHandle" draggable="true" ondragstart="drag(event)">item_6</td>
+			<td>Tree</td>
+			<td>Walnut</td>
+			<td>Autumn</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody></table>
+
+	<div id="displayDiv"></div>
+</body>

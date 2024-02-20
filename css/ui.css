@@ -1,0 +1,94 @@
+.dragHandle {
+
+	cursor: grab;
+	width: 5%;
+
+}
+
+.dragHandle:hover {
+
+	color: black;
+	background-color: darkorange;
+
+}
+
+.dragHandle:active {
+
+	cursor: grabbing;
+
+}
+
+body {
+
+	font-family: Arial;
+	font-size: .8em;
+
+}
+
+table {
+
+	width: 100%;
+	border: 2px solid black;
+	border-spacing: 0px;
+	margin-bottom: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+table.dragging {
+
+	position: absolute;
+	z-index: 1000;
+	border: 2px solid black;
+	border-top: 1px solid black;
+	opacity: 1;
+
+}
+
+tr.tableHeaders {
+
+	background-color: darkorange;
+	padding: 5px;
+	color: black;
+	font-weight: bold;
+	border: 0;
+
+}
+
+tr.itemsClass {
+
+	background-color: black;
+	padding: 5px;
+	color: darkorange;
+	font-weight: bold;
+	border: 0;
+
+}
+
+tr.item {
+
+	background-color: #CCCCCC;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	text-align: center;
+	position: relative;
+
+}
+
+td {
+
+	border-top: 1px solid black;
+	padding: 0 10px;
+	height: 2em;
+	width: 19%;
+
+}
+
+tr.itemsClass td {
+
+	column-span: all;
+	border-top: 1px solid darkorange;
+
+}
+
